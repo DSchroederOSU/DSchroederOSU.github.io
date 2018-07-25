@@ -13,7 +13,7 @@
     <meta name="author" content="Daniel Schroeder">
 
     <link rel="stylesheet" href="css/style.css">
-
+    <script src="js/scripts.js"></script>
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
@@ -35,12 +35,6 @@
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="resume.html">Resume</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="projects.html">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="contact.html">Contact</a>
             </li>
           </ul>
         </div>
@@ -65,7 +59,11 @@
                                     Age:
                                 </td>
                                 <td class="info-cell">
-                                    21
+                                        <span id="my_age"></span>
+                                        <script>
+                                                var d = new Date();
+                                                document.getElementById("my_age").innerHTML = d.getFullYear()-1996;
+                                        </script>
                                 </td>
                             </tr>
                             <tr>
@@ -73,7 +71,7 @@
                                     Phone:
                                 </td>
                                 <td class="info-cell">
-                                    (707) 217-5880
+                                    <span id="phone_number">XXX-XXX-XXXX</span>
                                 </td>
                             </tr>
                             <tr>
@@ -81,7 +79,8 @@
                                     Email:
                                 </td>
                                 <td class="info-cell">
-                                    dschroederhhs@gmail.com
+                                    <a href="mailto:dschroederhhs@gmail.com" target="_top">dschroederhhs@gmail.com</a>
+                                    
                                 </td>
                             </tr>
                         </table>
@@ -91,24 +90,80 @@
                         <div class="container"> 
                             <ul class="link-nav">
                                 <li class="social-nav-item">
-                                <a class="nav-link js-scroll-trigger" href="https://www.facebook.com/daniel.schroeder.106">
+                                <a class="nav-link" href="https://www.facebook.com/daniel.schroeder.106" target="_blank" onmouseout="hideFacebook()" onmouseover="showFacebook()">
                                     <img src="https://www.users.miamioh.edu/trowbrlc/IMS222/HireMe/img/Facebook.png" alt="facebook" height="40" width="40">
+                                    <div class="link-preview-f" id="facebook_preview"></div>
                                 </a>
+                                <script>
+                                    function showFacebook(){
+                                        var preview = document.getElementById('facebook_preview');
+                                        preview.style = "-webkit-transition-duration: 1s;transition-duration: 1s;"
+                                        
+                                        preview.style.transform = "translate(0px, 200px)";
+                                    }
+
+                                    function hideFacebook(){
+                                        var preview = document.getElementById('facebook_preview');
+                                        preview.style.transform = "translate(0px, -200px)";
+                                    }
+                                </script>
                                 </li>
                                 <li class="social-nav-item">
-                                <a class="nav-link js-scroll-trigger" href="https://twitter.com/DSchro225">
+                                <a class="nav-link " href="https://twitter.com/DSchro225" target="_blank" onmouseout="hideTwitter()" onmouseover="showTwitter()">
                                     <img src="http://www.iconsdb.com/icons/preview/white/twitter-xxl.png" alt="twitter" height="40" width="37" style="padding-top: 5px;">
+                                    <div class="link-preview-t" id="twitter_preview"></div>
                                 </a>
+                                <script>
+                                    function showTwitter(){
+                                        var preview = document.getElementById('twitter_preview');
+                                        preview.style = "-webkit-transition-duration: 1s;transition-duration: 1s;"
+                                        
+                                        preview.style.transform = "translate(0px, 200px)";
+                                    }
+
+                                    function hideTwitter(){
+                                        var preview = document.getElementById('twitter_preview');
+                                        preview.style.transform = "translate(0px, -200px)";
+                                    }
+                                    </script>
                                 </li>
                                 
                                 <li class="social-nav-item">
-                                <a class="nav-link js-scroll-trigger" href="https://www.linkedin.com/in/daniel-schroeder-b95196107/">
+                                <a class="nav-link js-scroll-trigger" href="https://www.linkedin.com/in/daniel-schroeder-b95196107/" target="_blank" onmouseout="hideLinked()" onmouseover="showLinked()">
                                     <img src="http://www.ncirs.edu.au/themes/ncirs/images/linkedin_logo.png" alt="linkedin" height="40" width="40">
+                                    <div class="link-preview-l" id="linked_preview"></div>
                                 </a>
+                                <script>
+                                        function showLinked(){
+                                            var preview = document.getElementById('linked_preview');
+                                            preview.style = "-webkit-transition-duration: 1s;transition-duration: 1s;"
+                                            
+                                            preview.style.transform = "translate(0px, 200px)";
+                                        }
+                                        
+                                        function hideLinked(){
+                                            var preview = document.getElementById('linked_preview');
+                                            preview.style.transform = "translate(0px, -200px)";
+                                        }
+                                    </script>
                                 <li class="social-nav-item">
-                                <a class="nav-link js-scroll-trigger" href="https://github.com/DSchroederOSU">
+                                <a class="nav-link js-scroll-trigger" href="https://github.com/DSchroederOSU" target="_blank" onmouseout="hideGit()" onmouseover="showGit()">
                                     <img src="http://balzer82.github.io/github.png" alt="github" height="40" width="40">
+                                    <div class="link-preview-g" id="git_preview"></div>
                                 </a>
+                                <script>
+                                        function showGit(){
+                                            var preview = document.getElementById('git_preview');
+                                            preview.style = "-webkit-transition-duration: 1s;transition-duration: 1s;"
+                                            
+                                            preview.style.transform = "translate(0px, 200px)";
+                                        }
+                                        
+                                        function hideGit(){
+                                            var preview = document.getElementById('git_preview');
+                                            preview.style.transform = "translate(0px, -200px)";
+                                        }
+                                    </script>
                             </ul> 
                             
                         </div>
@@ -116,10 +171,10 @@
                     </div>       
                 </div>
             </div>
-
             
             
-        </div> 
+            
+        </div>  
     <script src="js/scripts.js"></script>
     <!-- Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
